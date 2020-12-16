@@ -1,0 +1,22 @@
+{
+  "name": "server_test_v1_poludnev",
+  "version": "1.0.0",
+  "description": "my first try to run server on Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poludnev/SERVER_N1.git"
+  },
+  "author": "poludnev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poludnev/SERVER_N1/issues"
+  },
+  "homepage": "https://github.com/poludnev/SERVER_N1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
