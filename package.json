@@ -4,7 +4,8 @@
   "description": "my first try to run server on Express",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,21 @@
   },
   "homepage": "https://github.com/poludnev/SERVER_N1#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "prettier": "^2.2.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx": "^0.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
