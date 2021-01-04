@@ -6,5 +6,6 @@ const blogIndex = fs.readFileSync(
 );
 
 exports.loadIndex = (req, res) => {
+  // console.log(process.env);
   res.status('200').send(blogIndex);
 };

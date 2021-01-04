@@ -10,13 +10,22 @@ const projectsRouter = require('./routes/projectsRouter');
 
 const app = new Express();
 
+app.set('view engine', 'pug');
+
 app.use(Express.static(`${__dirname}/public`));
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.use(Express.json());
+// app.use(Express.json());
+
+app.use(
+  Express.urlencoded({
+    extended: true,
+  })
+);
+
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 app.use('/steps', stepsRouter);
