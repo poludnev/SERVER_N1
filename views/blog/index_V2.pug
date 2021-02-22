@@ -1,0 +1,77 @@
+extends template-1.pug
+
+block content
+    .container
+        nav#navigation-bar-container.navbar.navbar-expand-lg.navbar-light.bg-transparent
+            button.navbar-toggler(
+                type='button'
+                data-bs-toggle='collapse'
+                data-bs-target='#navbar'
+                aria-controls='navbar'
+                aria-expanded='false'
+                aria-label='Toggle navigation'
+                )
+                .navbar-toggler-icon
+            a.navbar-brand(href='#')= 'Roman\'s Blog V2'
+            #navbar.collapse.navbar-collapse.flex-row-reverse
+                ul.nav.navbar-nav
+                    li.nav-item
+                        a.nav-link.active(href='#')= 'Blog'
+                    li.nav-item
+                        a.nav-link(href='#')= 'CV'
+                    li.nav-item
+                        a.nav-link(href='#')= 'Time line'
+                    li.nav-item
+                        a.nav-link(href='#')= 'Projects'
+                    li.nav-item
+                        a.nav-link(href='#')= 'Back Home'
+        hr.my-2
+
+        main.bg-transparent
+            .row.pt-3.px-3.m-0
+                .col-12.col-ms-3.col-md-4.p-0.m-0
+                    .ava.m-2
+                        img(src="http://localhost:8005/img/ava-1.jpg", width='100%')
+                .col.p-0.m-0
+                    .about-me.m-2(
+                        style='text-align: left'
+                    )
+                        span
+                            h2= 'Hello, guys. I’m Roman.'
+                            br
+                            | Welcome to my personal blog.
+                            br
+                            br
+                            | This is my first blog record and I will be a disclaimer until I find a better idea to introduce myself.
+                            br
+                            | You might ask (I hope you would) what is my reason? What is my purpose?
+                            br
+                            | Unfortunately, my answer won’t be concise and coherent, but if you are still here and reading this, it may be interesting for you.
+            hr.my-1
+            if formAvailable
+                include body/newPostForm.pug
+            .blog
+                //- .mx-3
+                    p.p-0.m-0.small='Sort by: '
+                        a(href="#")= 'newest'
+                        |  |
+                        |
+                        a(href="#")= 'oldest'
+                        |  Show
+                        |
+                        a(href="#")= '20'
+                        |  |
+                        |
+                        a(href="#")= '50'
+                        |  |
+                        |
+                        a(href="#")= '100'
+                each blogRecord in blog.blogData
+                    include body/blogRecord.pug
+
+
+        hr.my-2
+        footer
+            .row.d-flex.align-items-center.p-3.m-0
+                .col-12.col-md-5.d-flex.justify-content-center(style='text-align: center;')= 'Copyright just for the Copyright'
+                .col.d-flex.justify-content-center.m-2(style='text-align: center;')= 'E-mail / Facebook / LinkedIn / Instagram'

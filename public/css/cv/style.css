@@ -1,0 +1,38 @@
+body {
+  padding-top: 3.5em;
+  font-family: 'brandon grotesque', helvetica, sans-serif;
+  /* font-family: 'gotham rounded', 'open-sans', sans-serif; */
+  /* font-family: helvetica, sans-serif; */
+}
+.front-heading h1 {
+  font-family: 'brandon grotesque', helvetica, sans-serif;
+  text-transform: capitalize;
+}
+.front-intro p {
+  font-family: 'gotham rounded', 'open-sans', sans-serif;
+}
+.front-nav-bar ul {
+  font-family: helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+.header {
+  background-color: white;
+}
+.social-media-img {
+  width: 36px;
+}
+
+.card-header {
+  background-color: white;
+  color: rgb(150, 150, 150);
+  font-size: 0.9rem;
+  padding: 0.3rem 1rem;
+}
+.light {
+  color: rgb(150, 150, 150);
+}

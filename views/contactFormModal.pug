@@ -1,0 +1,53 @@
+if !currPath
+    - var querry= ''
+else
+    - var querry= '?' + currPath
+
+block content
+#formPostSuccess.modal.fade(tabindex="-1")
+            .modal-dialog.modal-dialog-centered.modal-sm
+                .modal-content.rounded-5.p-0
+                    .modal-body.p-0.p-md-2.text-body.text-center.m-3
+                        legend Your message's been successfully sent.
+                        button.btn.btn-outline-dark.m-3(type="button" data-bs-dismiss="modal") Noted
+
+#contactFormModal.modal.fade(tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true")
+    .modal-dialog.modal-dialog-centered
+        .modal-content.rounded-0.p-0
+            .modal-body.p-0.p-md-2
+                form.text-body.p-1(action='http://localhost:8005/contactForm' + querry method="POST")
+                    .d-flex.justify-content-end
+                        legend.m-1.h5.p-md-1
+                            | Leave me a messeage or
+                            |
+                            a(type="button" data-bs-toggle="dropdown" aria-expanded="false" href="#") follow me.
+                            ul.dropdown-menu
+                                li
+                                    span.m-1.mx-md-2(type="button" href=socialLinkes.instagram, id="", target="_blank")
+                                        a(href=socialLinkes.instagram, id="", target="_blank")
+                                            img.social-media-img(src="img/index/sm-logo-inst-bw-256.png" alt="inst")
+                                    span.m-1.mx-md-2(type="button" href=socialLinkes.facebook, id="", target="_blank")
+                                        a(href=socialLinkes.facebook, id="", target="_blank")
+                                            img.social-media-img(src="img/index/sm-logo-fb-bw-256.png" alt="fb" )
+                                    span.m-1.mx-md-2(type="button" href=socialLinkes.linkedIn, id="", target="_blank")
+                                        a(href=socialLinkes.linkedIn, id="", target="_blank")
+                                            img.social-media-img(src="img/index/sm-logo-lnkdin-bw-256.png" alt="lnkdin" )
+                                    span.m-1.mx-md-2(type="button" href=socialLinkes.twitter, id="", target="_blank")
+                                        a(href=socialLinkes.twitter, id="", target="_blank")
+                                            img.social-media-img(src="img/index/sm-logo-twtr-bw-256.png" alt="tw" )
+
+                        button.btn-sm.p-md-1(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+                    .m-0
+                        label.form-label.m-0.p-1.fs-6(for="exampleInputEmail1") Write your email or other contact details here:
+                        input#exampleInputEmail1.form-control.fs-6.m-0.p-1.p-md-2(type="text" placeholder="example@email.mail" name="visitorContacts")
+                        #emailHelp.form-text.m-0.p-1.p-md-2 We'll never share your email with anyone else.
+                    .m-0
+                        //- label.form-label.fs-6.m-0.p-1(for="exampleFormControlTextarea1") Example textarea
+                        textarea.form-control.fs-6.m-0.p-1.p-md-2#exampleFormControlTextarea1(rows="3" placeholder="Put your message here" name="visitorMessage")
+                    .m-0.p-1
+                        | Or send me an e-mail directly:
+                        |
+                        a(href="mailto:poludnev@gmail.com") poludnev.roman@gmail.com
+                    .d-flex.justify-content-end
+                        button.btn.btn-outline-primary.btn-sm.rounded-0.my-1.me-2.py-1.px-3.m-md-2.mt-md-3(type="submit") Submit
+                        button.btn.btn-outline-secondary.btn-sm.rounded-0.my-1.me-4.py-1.px-3.m-md-2.mt-md-3(type="button" data-bs-dismiss="modal") Close

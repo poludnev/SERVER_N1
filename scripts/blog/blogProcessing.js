@@ -10,6 +10,7 @@ const readBlog = () => {
     `${__dirname}/../../data/blog-records.json`,
     'utf-8'
   );
+  // console.log('blog parse', JSON.parse(blogDataJSON));
   return JSON.parse(blogDataJSON);
 };
 
@@ -77,6 +78,13 @@ module.exports = {
 
   getBlog(blogData = readBlog()) {
     blogData.blogRecords.sort((a, b) => b.date - a.date);
+    blogData.blogRecords = blogData.blogRecords.map((record) => {
+      record.body = record.body
+        .split('\n')
+        .map((string) => `<p>${string}</p>`)
+        .join('');
+      return record;
+    });
     return blogData;
   },
 };

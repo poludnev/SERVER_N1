@@ -1,0 +1,147 @@
+extends ../template-bootstrap.pug
+
+
+append customStyleSheets
+    link(rel="stylesheet", href="css/cv/style.css", type="text/css")
+    //- style .container { background-color: red }
+    //- style .header { background-color: yellow }
+    //- style .main { background-color: green }
+    //- style .footer { background-color: white }
+
+    - var classcl = 'text-class'
+    - var classcl2 = 'text-class'
+block content
+    include ../contactFormModal.pug
+    .container
+        .header.m-0.fixed-top
+            nav.navbar.navbar-expand-lg.navbar-light
+                .container
+                    a.navbar-brand.ms-5(href='#') Roman Poludnev / CV
+                    button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                        span.navbar-toggler-icon
+                    .collapse.me-5.flex-row-reverse.navbar-collapse#navbarSupportedContent
+                        ul.nav.navbar-nav
+                            li.nav-item
+                                a.nav-link(href='/blog')= 'Blog'
+                            li.nav-item
+                                a.nav-link.active(href='#')= 'CV'
+                            li.nav-item
+                                a.nav-link.disabled(href='#')= 'Time line'
+                            li.nav-item
+                                a.nav-link.disabled(href='#')= 'Projects'
+                            li.nav-item
+                                a.nav-link(href='http://localhost:8005')= 'Home'
+                            li.nav-item.dropdown
+                                a.nav-link(href='#' data-bs-toggle="modal" data-bs-target="#contactFormModal")= 'Contact me'
+
+
+        .main
+            .card.m-2.shadow-sm.border-0
+                //- .card-header Introduce
+                .card-body
+                    .container
+                        .row
+                            .col-3
+                                img.img-thumbnail(src="img/cv-photo.jpg", alt="", srcset="")
+                            .col.d-flex.align-items-center.justify-content-center
+                                div
+                                    .h1 Полуднев Роман Витальевич
+                                    .p 34 года, дата рождения: 2 мая 1986
+                                    .p Проживает: Владивосток
+                                    .p Гражданство: Россия
+                                    .p Готов к переезду: Москва, Санкт-Петербург
+
+                //- .card-footer Footer
+            .card.m-2.shadow-sm
+                .card-header Desired position and salary
+                .card-body
+                    .row
+                        .col
+                            .h5
+                                | Закупщик ВЭД, Менеджер по закупу ВЭД, Байер, Менеджер ВЭД,
+                                |
+                                | Продакт-менеджер, Категорийный менеджер
+                        .col-2
+                            .h5
+                                strong от 130 000 /add ruble symbol like $
+                    .p
+                        strong Область деятельности:
+                        ul
+                            li Коммерческие закупки (розница, оптовая торговля)
+                            li Некоммерческий закупки
+                            li Логистика, транспорт, ВЭД
+                    .p
+                        strong Занятость:
+                        |
+                        | полная, удаленная работа, аутсорс
+                    .p
+                        strong Желаемое время в пути до работы:
+                        |
+                        | не имеет значения
+                    .p
+                        strong Отношение к командировкам:
+                        |
+                        | положительное
+                //- .card-footer Footer
+            .card.m-2.shadow-sm
+                .card-header Опыт работы: 12 лет 8 месяцев
+                .card-body
+                    .row
+                        .col-3
+                            .p Октябрь 2020 - настоящее время
+                        .col
+                            .h5 ООО Энергосфера
+                            .h6.light.small Владивосток
+                            .p
+                                strong Направление деятельности:
+                                |
+                                | оптовая и розничная торговля промышленными и бытовыми электротехническими товарами, световым оборудованием.
+
+                            .p
+                                strong Должность:
+                                |
+                                | Категорийный менеджер
+                            .p
+                                strong Товарная категория:
+                                |
+                                | Commercial Led Lighting (Коммерческое светодиодное осветительное оборудование), рынок Северной Америки
+
+
+                //- .card-footer Footer
+            .card.m-2.shadow-sm
+                .card-header Education
+                .card-body body
+                .card-footer Footer
+            .card.m-2.shadow-sm
+                .card-header Professional development, courses
+                .card-body body
+                .card-footer Footer
+            .card.m-2.shadow-sm
+                .card-header Key skills
+                .card-body body
+                .card-footer Footer
+            .card.m-2.shadow-sm
+                .card-header Further information
+                .card-body body
+                .card-footer Footer
+
+        .footer.m-1.bg-light
+            .row.d-flex.align-items-center.p-1.m-0
+                .col-12.col-md-5.d-flex.justify-content-center(style='text-align: center;')= 'Copyright just for the Copyright'
+                .col.d-flex.justify-content-center(style='text-align: center;')
+                    span.m-1.mx-md-1.p-1 Follow me:
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.instagram, id="", target="_blank")
+                        a(href=socialLinkes.instagram, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-inst-bw-256.png" alt="inst")
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.facebook, id="", target="_blank")
+                        a(href=socialLinkes.facebook, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-fb-bw-256.png" alt="fb" )
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.linkedIn, id="", target="_blank")
+                        a(href=socialLinkes.linkedIn, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-lnkdin-bw-256.png" alt="lnkdin" )
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.twitter, id="", target="_blank")
+                        a(href=socialLinkes.twitter, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-twtr-bw-256.png" alt="tw" )
+append customScripts
+    script console.log('customScripts test')
+    script $(document).ready(function() {console.log("document is ready");$( ".card" ).hover(function() {$(this).addClass('shadow');$(this).removeClass('shadow-sm')}, function() {$(this).removeClass('shadow');$(this).addClass('shadow-sm');});});

@@ -1,0 +1,102 @@
+extends template-1.pug
+
+append customStyles
+    link(rel="stylesheet", href="http://localhost:8005/css/blog/style.css", type="text/css")
+
+block content
+    include ../contactFormModal.pug
+    .container
+        nav#navigation-bar-container.navbar.navbar-expand-lg.navbar-light.bg-transparent
+            button.navbar-toggler(
+                type='button'
+                data-bs-toggle='collapse'
+                data-bs-target='#navbar'
+                aria-controls='navbar'
+                aria-expanded='false'
+                aria-label='Toggle navigation'
+                )
+                .navbar-toggler-icon
+            a.navbar-brand(href='#')= 'Roman\'s Blog V1'
+            #navbar.collapse.navbar-collapse.flex-row-reverse
+                ul.nav.navbar-nav
+                    li.nav-item
+                        a.nav-link.active(href='#')= 'Blog'
+                    li.nav-item
+                        a.nav-link(href='/cv')= 'CV'
+                    li.nav-item
+                        a.nav-link.disabled(href='#')= 'Time line'
+                    li.nav-item
+                        a.nav-link.disabled(href='#')= 'Projects'
+                    li.nav-item
+                        a.nav-link(href='http://localhost:8005')= 'Home'
+                    li.nav-item.dropdown
+                        a.nav-link(href='#' data-bs-toggle="modal" data-bs-target="#contactFormModal")= 'Contact me'
+
+
+
+        hr.my-2
+
+        main.bg-transparent
+            .row.pt-3.px-3.m-0
+                .col-12.col-ms-3.col-md-4.p-0.m-0
+                    .ava.m-2
+                        img(src="http://localhost:8005/img/ava-1.jpg", width='100%')
+                .col.p-0.m-0
+                    .about-me.m-2(
+                        style='text-align: left'
+                    )
+                        span
+                            h2= 'Hello, guys. I’m Roman.'
+                            br
+                            | Welcome to my personal blog. Or my diary. Or whatever. I'm still not sure what it finally is.
+                            br
+                            br
+                            | This is my first blog record and it will be a disclaimer until I find a better idea to introduce myself.
+                            br
+                            | You might ask (I hope you would) what is my reason? What is my purpose?
+                            br
+                            | I have a dream to become a coder, I've been learning the JS for some time, and one day I realised that I need something practical for deeper understanding what I'm learning. How this will help me to become a real coder.
+            hr.my-1
+            if formAvailable
+                include body/newPostForm.pug
+            .blog
+                //- .mx-3
+                    p.p-0.m-0.small='Sort by: '
+                        a(href="#")= 'newest'
+                        |  |
+                        |
+                        a(href="#")= 'oldest'
+                        |  Show
+                        |
+                        a(href="#")= '20'
+                        |  |
+                        |
+                        a(href="#")= '50'
+                        |  |
+                        |
+                        a(href="#")= '100'
+                each blogRecord in blog.blogRecords
+                    include body/blogRecord.pug
+
+
+        hr.my-2
+        footer
+            .row.d-flex.align-items-center.p-3.m-0
+                .col-12.col-md-5.d-flex.justify-content-center(style='text-align: center;')= 'Copyright just for the Copyright'
+                .col.d-flex.justify-content-center.m-2(style='text-align: center;')
+                    span.m-1.mx-md-1.p-1 Follow me:
+                    //- ul.dropdown-menu
+                        //- li
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.instagram, id="", target="_blank")
+                        a(href=socialLinkes.instagram, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-inst-bw-256.png" alt="inst")
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.facebook, id="", target="_blank")
+                        a(href=socialLinkes.facebook, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-fb-bw-256.png" alt="fb" )
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.linkedIn, id="", target="_blank")
+                        a(href=socialLinkes.linkedIn, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-lnkdin-bw-256.png" alt="lnkdin" )
+                    span.m-1.mx-md-1(type="button" href=socialLinkes.twitter, id="", target="_blank")
+                        a(href=socialLinkes.twitter, id="", target="_blank")
+                            img.social-media-img(src="img/index/sm-logo-twtr-bw-256.png" alt="tw" )
+                    //- = 'E-mail / Facebook / LinkedIn / Instagram'

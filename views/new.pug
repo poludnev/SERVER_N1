@@ -1,0 +1,13 @@
+extends ./hex.pug
+
+block content
+    form(action="http://localhost:8005/api/pug/hex/posts" method="post")
+        div
+            label(for="") 'Title'
+                sup '*'
+            input(name='title')
+        div
+            label(for="") 'Body'
+                sup '*'
+            textarea(rows="10" name="body")
+        input(type="submit" value="Save")

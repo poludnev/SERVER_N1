@@ -1,0 +1,38 @@
+.post-form-block
+                //- .m-1.p-2
+                    button.collapse.show.btn.btn-sm.btn-outline-dark.addPostForm(
+                        type='button'
+                        data-bs-toggle='collapse' data-bs-target='.addPostForm'
+                        )= 'Add new post'
+                    button.collapse.btn.btn-sm.btn-outline-danger.addPostForm(
+                        type='button'
+                        data-bs-toggle='collapse' data-bs-target='.addPostForm'
+                        )= 'Close form'
+                #addPostForm.collapse.addPostForm.show
+                    .card.m-1.p-2.shadow-sm
+                        button.btn-close.close-btn(
+                            type='button'
+                            data-bs-toggle='collapse'
+                            data-bs-target='.addPostForm'
+                            aria-label='Close'
+                        )
+                        .col-12.col-lg-12
+                            h5= 'Add new post'
+                            form(
+                                action="http://localhost:8005/blog" method="POST"
+                            )
+                                .form-group.my-1
+                                    input.form-control.form-control-sm(
+                                        type='text' id='title' placeholder='Enter title' name='title'
+                                    )
+                                .form-group.my-1
+                                    textarea#textarea.form-control(
+                                        placeholder='Enter your post'
+                                        rows='3'
+                                        name='textarea'
+                                        )
+                                .d-flex.justify-content-between.align-items-center
+                                    button.btn.btn-sm.btn-outline-success(
+                                        type='submit'
+                                        name="submit"
+                                        )= 'Send the post'

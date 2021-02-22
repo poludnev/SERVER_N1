@@ -1,0 +1,8 @@
+extends ./hex.pug
+
+block content
+  div
+    a(href='/') Main page
+  div(class='card')
+    h1(class="card-title")= post.title
+    p(class="card-text")= post.body
